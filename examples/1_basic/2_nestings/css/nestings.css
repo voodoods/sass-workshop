@@ -1,0 +1,23 @@
+#parent {
+  background: #ddd;
+}
+#parent .container {
+  width: 50%;
+}
+#parent .container .row {
+  overflow: hidden;
+}
+#parent .container .row .col-1-4 {
+  width: 25%;
+}
+#parent .container .row .col-1-4 .link {
+  color: black;
+}
+#parent .container .row .col-1-4 .link:hover {
+  color: red;
+}
+#parent .container .row:hover {
+  background: white;
+}
+
+/*# sourceMappingURL=nestings.css.map */

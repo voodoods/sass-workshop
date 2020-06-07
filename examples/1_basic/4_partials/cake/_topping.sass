@@ -1,0 +1,20 @@
+@mixin flakes($color)
+    background: $color
+    width: 10px
+    height: 5px
+
+.flakes
+    @include flakes($color: pink)
+
+.rings
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background: none
+    border: 3px solid black
+
+.pearls
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background: black

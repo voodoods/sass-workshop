@@ -1,0 +1,70 @@
+.chocolate-cream {
+  color: #5e3312;
+}
+
+.macadamia-cream {
+  color: #fff1bf;
+}
+
+.strawberry-cream {
+  color: #ffd6e7;
+}
+
+.flakes {
+  background: pink;
+  width: 10px;
+  height: 5px;
+}
+
+.rings {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: none;
+  border: 3px solid black;
+}
+
+.pearls {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: black;
+}
+
+.raspberries {
+  color: #e50099;
+}
+
+.strawberries {
+  color: #ff6b6b;
+}
+
+.banana {
+  color: #fff200;
+}
+
+#cake {
+  border-color: #5e3312;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  color: white;
+}
+#cake .topping {
+  background: #5e3312;
+  width: 10px;
+  height: 5px;
+}
+#cake .fruit {
+  color: #ff6b6b;
+}
+
+#different-cake {
+  color: #fff1bf;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  color: white;
+}
+
+/*# sourceMappingURL=different-cake.css.map */

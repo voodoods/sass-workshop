@@ -1,0 +1,13 @@
+{
+  "name": "sass-workshop",
+  "version": "1.0.0",
+  "description": "Notes and examples on how to SASS.",
+  "main": "index.js",
+  "repository": "git@github.com:voodoods/sass-workshop.git",
+  "author": "Norman Steger <n.steger@reply.de>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "sass": "^1.26.7"
+  }
+}

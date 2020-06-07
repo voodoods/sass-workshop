@@ -1,0 +1,36 @@
+/* ================================================== simple usage ================================================== */
+
+$ocean-blue: #00a0e0
+$sunny-orange: #ffb600
+
+.link
+    color: $sunny-orange
+
+.link:hover
+    color: $ocean-blue
+
+/* ================================================== combine variables ================================================== */
+
+$spacing-small: 10px
+$spacing-big: 30px
+$content-spacing: $spacing-small $spacing-big
+
+.my-box
+    margin: $content-spacing
+
+/* ================================================== calcucalte variables ================================================== */
+
+$column-width: 200px
+$three-col-block: $column-width * 3
+
+.my-block
+    width: $three-col-block
+
+/* ================================================== example case ================================================== */
+
+$dark-grey: #333333
+$light-grey: #eeeeee
+$gradient-grey: linear-gradient($dark-grey, $light-grey)
+
+.my-gradient-box
+    background: $gradient-grey

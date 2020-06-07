@@ -1,0 +1,33 @@
+/* ================================================== mathematical operators ================================================== */
+
+@debug 1 + 2 * 3 == 1 + (2 * 3) // true
+
+/* ================================================== logical operators ================================================== */
+
+@debug true or false and false == true or (false and false) // true
+
+// also available: not
+
+/* ================================================== practical example ================================================== */
+
+@mixin dynamic-background($from: null, $to: null)
+    @if $from != null and $to != null
+        background: linear-gradient($from, $to)
+    @if $from != null and $to == null
+        background: $from
+    @if $from == null and $to != null
+        background: $to
+    @if $from == null and $to == null
+        background: #ff0000
+
+.box-1
+    @include dynamic-background($from: #eee, $to: #888)
+
+.box-2
+    @include dynamic-background($from: #eee)
+
+.box-3
+    @include dynamic-background($from: null, $to: #888)
+
+.box-4
+    @include dynamic-background

@@ -1,0 +1,110 @@
+/* ================================================== basic ================================================== */
+@mixin link
+    color: #555555
+    &:hover
+        color: red
+
+.fancy-link
+    @include link
+
+/* ================================================== with variables ================================================== */
+$spacing-small: 10px
+$spacing-big: 30px
+$content-spacing: $spacing-small $spacing-big
+
+@mixin box-spacing
+    margin: $content-spacing
+    padding: $spacing-small
+    line-height: 1.4em
+
+.spaced-box
+    @include box-spacing
+
+/* ================================================== combined mixins ================================================== */
+
+@mixin squared-box
+    width: 200px
+    height: 200px
+
+@mixin light-grey-box-with-link
+    background: #eee
+    @include squared-box
+    @include box-spacing
+
+    a
+        @include link
+
+.fancy-box
+    @include light-grey-box-with-link
+
+/* ================================================== underscore and hyphen ================================================== */
+
+.other-fancy-box
+    @include light_grey_box-with_link
+
+/* ================================================== with arugments ================================================== */
+
+@mixin dynamically-spaced-box($padding, $margin)
+    display: inline-flex
+    align-items: center
+    padding: $padding
+    margin: $margin
+
+.flexy-box
+    @include dynamically-spaced-box($padding: 20px, $margin: 15px)
+
+/* ================================================== with optional arguments (default values) ================================================== */
+
+@mixin fadeIn($rule, $easing: ease-in, $duration: 0.5s )
+    transform: $duration $rule $easing
+
+.with-defined-effect
+    @include fadeIn($rule: background-color, $easing: ease-in-out, $duration: 1s )
+
+.with-standard-effect
+    @include fadeIn($rule: color)
+
+/* ================================================== with optional arguments (null values) ================================================== */
+
+@mixin my-box($rounded-corners: 5px, $bg-gradient: null)
+    border-radius: $rounded-corners
+    background: $bg-gradient
+
+.a-box
+    @include my-box()
+
+/* ================================================== with conditions ================================================== */
+
+@mixin styled-box($rounded-corners: null, $bg-gradient: null)
+    @if $rounded-corners
+        border-radius: $rounded-corners
+    @if $bg-gradient
+        background: linear-gradient(darken($bg-gradient, 25%),lighten($bg-gradient, 25%))
+    @else
+        background: #ddd
+
+.fancy-rounded-box
+    @include styled-box($rounded-corners: 10px, $bg-gradient: #dddddd)
+
+.simple-box
+    @include styled-box()
+
+/* ================================================== use arguments for property names ================================================== */
+
+@mixin dynamic-rule($property, $value)
+    #{$property}: $value
+
+.with-dynamic-rule
+    @include dynamic-rule($property: margin, $value: 10px)
+
+/* ================================================== content blocks ================================================== */
+
+@mixin green-box
+    background: green
+    width: 300px
+    height: 200px
+    @content
+
+.random-box_green
+    @include green-box
+        color: yellow

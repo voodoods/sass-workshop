@@ -1,0 +1,26 @@
+// @error "Something doesn't look right..."
+
+/* ================================================== example with mixin ================================================== */
+
+@mixin inline-object($display)
+    @if $display != inline and $display != inline-block and $display != inline-flex
+        @error "argument $display on @mixin inline-object must be equal to one of the following values: 'inline', 'inline-block', 'inline-flex'"
+    @else
+        display: $display
+
+.my-elem
+    // @include inline-object($display: block)
+    @include inline-object($display: inline)
+
+/* ================================================== example with function ================================================== */
+
+@function rest-width($wrapper-width, $child-width)
+    $rest: $wrapper-width - $child-width
+    @if $child-width > $wrapper-width
+        @error "argument $child-width on @mixin rest-width can't have a bigger value than argument $wrapper-width."
+
+    @return $rest
+
+.column
+    // width: rest-width(500px, 1000px)
+    width: rest-width(1000px, 500px)
