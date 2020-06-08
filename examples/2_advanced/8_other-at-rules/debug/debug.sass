@@ -1,19 +1,1 @@
-/* ================================================== basic usage ================================================== */
 
-@debug(1 == 1)
-@debug("hans" == hans)
-@debug( 1 == 1 and "1" == 1)
-
-/* ================================================== usage in functions ================================================== */
-
-@function sum($numbers...)
-    $sum: 0
-    @each $number in $numbers
-        $sum: $sum + $number
-
-    @debug $numbers
-    @debug $sum
-    @return "test"
-
-.micro
-    width: sum(50px, 30px, 100px)

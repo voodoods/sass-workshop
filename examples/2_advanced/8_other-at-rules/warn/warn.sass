@@ -1,18 +1,1 @@
-@warn "Stuff may break..."
 
-/* ================================================== practical example ================================================== */
-
-@mixin inline-object($display)
-
-@mixin styled-box($bg-color: #fff, $text-color: #000, $class: null)
-    color: $text-color
-    background: $bg-color
-
-    $lightnessA: lightness($text-color) 
-    $lightnessB: lightness($bg-color) 
-
-    @if (($lightnessA > 50 and $lightnessB > 50) or ($lightnessA < 50 and $lightnessB < 50 ))
-        @warn "Text color might not be readable on background in selector: #{$class}"
-
-.box
-    @include styled-box($bg-color: #555, $text-color: #333, $class: '.box')
